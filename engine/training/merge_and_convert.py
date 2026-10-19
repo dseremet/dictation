@@ -30,7 +30,7 @@ base_model: {base}
 
 Whisper large-v3-turbo fine-tuned (LoRA, merged) for Bosnian/Croatian/Serbian
 medical dictation, converted to CTranslate2 (`{quants}`) for faster-whisper.
-Built with [ditactic/dictation](https://github.com/diTactic-Media/dictation) on {today}.
+Built with [ditactic/dictation](https://github.com/dseremet/dictation) on {today}.
 
 ## Usage
 

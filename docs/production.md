@@ -21,7 +21,7 @@ checkout (`../dictation`):
 
 ```bash
 cd /var/www
-git clone https://github.com/diTactic-Media/dictation.git dictation
+git clone https://github.com/dseremet/dictation.git dictation
 cd dictation && npm ci && npm run build -w packages/protocol -w packages/vue
 ```
 

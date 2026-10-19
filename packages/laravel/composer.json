@@ -4,7 +4,7 @@
     "keywords": ["laravel", "speech-to-text", "whisper", "dictation", "transcription", "asr", "bosnian", "croatian", "serbian"],
     "license": "MIT",
     "type": "library",
-    "homepage": "https://github.com/diTactic-Media/dictation",
+    "homepage": "https://github.com/dseremet/dictation",
     "authors": [
         {
             "name": "diTactic Media",

@@ -1,7 +1,7 @@
 # @ditactic/dictation-react-native
 
 Native dictation for Expo / React Native apps, part of
-[diTactic-Media/dictation](https://github.com/diTactic-Media/dictation):
+[dseremet/dictation](https://github.com/dseremet/dictation):
 
 - `useDictationRecorder()` records speech with `expo-audio` (AAC/M4A, 16 kHz mono,
   32 kbps, metering, auto-stop, clean stop when the app goes to the background).

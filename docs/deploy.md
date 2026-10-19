@@ -6,7 +6,7 @@
 # docker-compose.dictation.yml
 services:
   dictation-engine:
-    image: ghcr.io/ditactic-media/dictation-engine:cpu   # or build: ./engine (Dockerfile.cpu)
+    image: ghcr.io/dseremet/dictation-engine:cpu   # or build: ./engine (Dockerfile.cpu)
     restart: unless-stopped
     ports: ["127.0.0.1:8321:8000"]      # never expose publicly
     environment:

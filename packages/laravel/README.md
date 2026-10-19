@@ -306,7 +306,7 @@ The default driver expects the self-hosted engine from this repository. Minimal 
 ```yaml
 services:
   dictation-engine:
-    image: ghcr.io/ditactic-media/dictation-engine:cpu
+    image: ghcr.io/dseremet/dictation-engine:cpu
     environment:
       ASR_MODEL: large-v3-turbo
       ASR_COMPUTE_TYPE: int8
