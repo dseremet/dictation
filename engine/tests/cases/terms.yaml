@@ -1,0 +1,43 @@
+- name: split words rejoined
+  input: "hiper tenzija zarez dia betes zarez tahi kardija"
+  expected: "Hipertenzija, dijabetes, tahikardija"
+- name: misspellings to canonical, latin diagnosis kept
+  input: "pneumonia zarez hypertenzija zarez appendicitis"
+  expected: "Pneumonia, hipertenzija, apendicitis"
+- name: proper-noun casing
+  input: "helikobakter pilori pozitivan zarez hašimoto tireoiditis"
+  expected: "Helicobacter pylori pozitivan, Hashimoto tireoiditis"
+- name: inflected variant keeps its ending
+  input: "intravenozno dvadeset miligrama furo semida zarez znaci hiper tenzije"
+  expected: "I.v. 20 mg furosemida, znaci hipertenzije"
+- name: drugs
+  input: "uzima met formin zarez rami pril zarez atorva statin zarez panto prazol"
+  expected: "Uzima metformin, ramipril, atorvastatin, pantoprazol"
+- name: multi-word canonical assembled over two passes
+  input: "dia betes melitus tip dva"
+  expected: "Dijabetes melitus tip 2"
+- name: longest match wins
+  input: "duboka venska trom boza"
+  expected: "Duboka venska tromboza"
+- name: unknown words untouched
+  input: "pacijent navodi zamor i vrtoglavicu"
+  expected: "Pacijent navodi zamor i vrtoglavicu"
+- name: request glossary term
+  input: "aplikovan je botoks u predjelu čela"
+  expected: "Aplikovan je Botox u predjelu čela"
+  glossary:
+    - { canonical: Botox, variants: [botoks, botox] }
+- name: request glossary beats built-in
+  input: "nalaz ce er pe"
+  expected: "Nalaz CRP"
+  glossary:
+    - { canonical: CRP, variants: [] }
+- name: latin diagnosis spelling is kept
+  input: "dijagnoza dvotačka pneumonia bilateralis tačka"
+  expected: "Dg: pneumonia bilateralis."
+- name: bhs diagnosis spelling is kept
+  input: "dijagnoza dvotačka pneumonija bilateralis tačka"
+  expected: "Dg: pneumonija bilateralis."
+- name: misheard drug name is corrected
+  input: "terapija dvotačka amoksicilim petsto miligrama tri puta dnevno"
+  expected: "Th: amoksicilin 500 mg 3x dnevno"

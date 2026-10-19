@@ -1,0 +1,46 @@
+# LoRA fine-tune of Whisper large-v3-turbo on BHS (parliament + Common Voice + private medical).
+base_model: openai/whisper-large-v3-turbo
+output_dir: runs/turbo-bhs-lora
+manifests:
+  train: data/manifests/train.jsonl
+  dev: data/manifests/dev.jsonl
+  fleurs_dev_lang: hr            # extra eval on google/fleurs hr_hr validation (first 300 rows)
+  fleurs_dev_rows: 300
+
+# Whisper has little Bosnian data; train bs rows with the Croatian language token,
+# matching ASR_DECODE_LANG_MAP=bs:hr at inference.
+language_token_map: { bs: hr }
+task: transcribe
+
+lora:
+  r: 32
+  alpha: 64
+  dropout: 0.05
+  target_modules: [q_proj, k_proj, v_proj, out_proj, fc1, fc2]   # encoder + decoder
+  train_encoder: true
+
+spec_augment:
+  enabled: true
+  mask_time_prob: 0.05
+  mask_time_length: 10
+  mask_feature_prob: 0.05
+  mask_feature_length: 10
+
+training:
+  precision: bf16
+  learning_rate: 1.0e-4
+  warmup_steps: 300
+  num_train_epochs: 2
+  per_device_train_batch_size: 8
+  gradient_accumulation_steps: 4   # effective 32
+  per_device_eval_batch_size: 8
+  gradient_checkpointing: true
+  eval_steps: 500
+  save_steps: 500
+  logging_steps: 25
+  max_label_length: 448
+  max_audio_seconds: 30
+  generation_max_length: 225
+  dataloader_num_workers: 4
+  seed: 13
+  report_to: [tensorboard]

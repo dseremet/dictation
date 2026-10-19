@@ -1,0 +1,18 @@
+- name: ijekavica survives
+  input: "lijek za mjesec dana zarez dijete je pri svijesti zarez ljekar preporučuje liječenje"
+  expected: "Lijek za mjesec dana, dijete je pri svijesti, ljekar preporučuje liječenje"
+- name: ekavica survives
+  language: sr
+  input: "lek za mesec dana zarez dete je pri svesti zarez lekar preporučuje lečenje"
+  expected: "Lek za mesec dana, dete je pri svesti, lekar preporučuje lečenje"
+- name: hr lexicon survives
+  language: hr
+  input: "liječnik mjeri tlak zarez kisik u redu zarez tjedan dana"
+  expected: "Liječnik mjeri tlak, kisik u redu, tjedan dana"
+- name: sr lexicon survives
+  language: sr
+  input: "lekar meri pritisak zarez kiseonik u redu zarez nedelja dana"
+  expected: "Lekar meri pritisak, kiseonik u redu, nedelja dana"
+- name: hronična and kronična both kept
+  input: "hronična bolest zarez kronična bolest"
+  expected: "Hronična bolest, kronična bolest"

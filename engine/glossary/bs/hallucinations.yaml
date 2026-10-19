@@ -1,0 +1,27 @@
+# Segments Whisper invents on silence, music or noise. Matched case-insensitively
+# after stripping punctuation: exact match, or a multi-word phrase at the start,
+# or a phrase covering >= 60 % of the segment.
+hallucinations:
+  - Hvala na gledanju
+  - Hvala vam na gledanju
+  - Hvala što ste gledali
+  - Hvala što gledate
+  - Pretplatite se
+  - Pretplatite se na kanal
+  - Lajkujte i pretplatite se
+  - Titlovi by
+  - Titlove izradio
+  - Titlove uradio
+  - Prevod i obrada
+  - Prijevod i obrada
+  - Obrada i prevod
+  - Prevela i obradila
+  - Preveo i obradio
+  - Amara.org
+  - Titlovi.com
+  - Nastaviće se
+  - Nastavit će se
+  - Muzika
+  - Do sljedećeg videa
+  - Vidimo se u sljedećem videu
+  - Hvala i doviđenja

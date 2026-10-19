@@ -1,0 +1,21 @@
+# Development/test image: tools + deps only, the repo is bind-mounted at /app.
+FROM python:3.11-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    HF_HUB_DISABLE_TELEMETRY=1 \
+    HF_HOME=/app/models/hf \
+    ASR_CACHE_DIR=/app/models \
+    ASR_GLOSSARY_DIR=/app/glossary \
+    ASR_TMP_DIR=/tmp/asr
+
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends ffmpeg curl git \
+ && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+COPY requirements.txt requirements-dev.txt ./
+RUN pip install --upgrade pip && pip install -r requirements.txt -r requirements-dev.txt
+
+CMD ["pytest", "-m", "not model"]

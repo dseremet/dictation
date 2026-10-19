@@ -1,0 +1,40 @@
+# Serving image, NVIDIA GPU (CTranslate2 float16 / int8_float16).
+FROM nvidia/cuda:12.4.1-cudnn-runtime-ubuntu22.04
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    HF_HUB_DISABLE_TELEMETRY=1 \
+    HF_HOME=/models/hf \
+    ASR_CACHE_DIR=/models \
+    ASR_GLOSSARY_DIR=/app/glossary \
+    ASR_TMP_DIR=/tmp/asr \
+    ASR_DEVICE=cuda \
+    ASR_COMPUTE_TYPE=float16 \
+    DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends python3.11 python3.11-venv python3-pip ffmpeg curl \
+ && rm -rf /var/lib/apt/lists/* \
+ && ln -sf /usr/bin/python3.11 /usr/local/bin/python
+
+RUN useradd --system --uid 10001 --create-home --home-dir /home/asr asr \
+ && mkdir -p /models /tmp/asr /app \
+ && chown -R asr:asr /models /tmp/asr /app
+
+WORKDIR /app
+COPY requirements.txt ./
+RUN python -m pip install --upgrade pip && python -m pip install -r requirements.txt
+
+COPY --chown=asr:asr asr_engine ./asr_engine
+COPY --chown=asr:asr glossary ./glossary
+COPY --chown=asr:asr pyproject.toml README.md ./
+
+USER asr
+EXPOSE 8000
+VOLUME ["/models"]
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=600s --retries=3 \
+  CMD curl -fsS http://127.0.0.1:8000/health || exit 1
+
+CMD ["python", "-m", "asr_engine.main"]

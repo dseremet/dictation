@@ -1,0 +1,33 @@
+# Node
+node_modules/
+dist/
+*.tgz
+coverage/
+.turbo/
+
+# PHP
+vendor/
+composer.lock
+.phpunit.result.cache
+.phpunit.cache/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+
+# Models, data, secrets
+engine/models/
+engine/data/
+engine/eval/results/*.json
+.env
+.env.local
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/

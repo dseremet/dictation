@@ -1,0 +1,29 @@
+# Croatian: ijekavica + hr lexical choices (liječnik, tlak, kisik), self-mapping.
+terms:
+  - { canonical: lijek, variants: [], category: dialect }
+  - { canonical: lijekovi, variants: [], category: dialect }
+  - { canonical: liječenje, variants: [], category: dialect }
+  - { canonical: liječnik, variants: [], category: dialect }
+  - { canonical: liječnički nalaz, variants: [], category: dialect }
+  - { canonical: mjesec, variants: [], category: dialect }
+  - { canonical: tjedan, variants: [], category: dialect }
+  - { canonical: dijete, variants: [], category: dialect }
+  - { canonical: crijevo, variants: [], category: dialect }
+  - { canonical: koljeno, variants: [], category: dialect }
+  - { canonical: vrijeme, variants: [], category: dialect }
+  - { canonical: bolesnik, variants: [], category: dialect }
+  - { canonical: kirurg, variants: [], category: dialect }
+  - { canonical: kirurgija, variants: [], category: dialect }
+  - { canonical: kemija, variants: [], category: dialect }
+  - { canonical: kronični, variants: [], category: dialect }
+  - { canonical: kronična, variants: [], category: dialect }
+  - { canonical: kisik, variants: [], category: dialect }
+  - { canonical: uputnica, variants: [], category: dialect }
+  - { canonical: opće stanje, variants: [], category: dialect }
+  - { canonical: povijest bolesti, variants: [], category: dialect }
+  - { canonical: obiteljska anamneza, variants: [], category: dialect }
+  - { canonical: sljedeća kontrola, variants: [], category: dialect }
+  - { canonical: svijest, variants: [], category: dialect }
+  - { canonical: pri svijesti, variants: [], category: dialect }
+  - { canonical: krvni tlak, variants: [], weight: 2, category: dialect }
+  - { canonical: točka, variants: [], prompt: false, category: dialect }

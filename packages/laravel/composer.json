@@ -1,0 +1,61 @@
+{
+    "name": "ditactic/dictation-laravel",
+    "description": "Speech-to-text recordings for Laravel: upload, queue, transcribe (self-hosted Whisper engine or any OpenAI-compatible API), stream and correct. Built for Bosnian/Croatian/Serbian medical dictation.",
+    "keywords": ["laravel", "speech-to-text", "whisper", "dictation", "transcription", "asr", "bosnian", "croatian", "serbian"],
+    "license": "MIT",
+    "type": "library",
+    "homepage": "https://github.com/diTactic-Media/dictation",
+    "authors": [
+        {
+            "name": "diTactic Media",
+            "homepage": "https://ditactic.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/bus": "^11.0|^12.0",
+        "illuminate/console": "^11.0|^12.0",
+        "illuminate/contracts": "^11.0|^12.0",
+        "illuminate/database": "^11.0|^12.0",
+        "illuminate/events": "^11.0|^12.0",
+        "illuminate/filesystem": "^11.0|^12.0",
+        "illuminate/http": "^11.0|^12.0",
+        "illuminate/queue": "^11.0|^12.0",
+        "illuminate/routing": "^11.0|^12.0",
+        "illuminate/support": "^11.0|^12.0",
+        "illuminate/validation": "^11.0|^12.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0|^10.0",
+        "phpunit/phpunit": "^10.5|^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ditactic\\Dictation\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ditactic\\Dictation\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ditactic\\Dictation\\DictationServiceProvider"
+            ],
+            "aliases": {
+                "Dictation": "Ditactic\\Dictation\\Facades\\Dictation"
+            }
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

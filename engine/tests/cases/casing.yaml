@@ -1,0 +1,18 @@
+- name: first letter capitalised, rest kept
+  input: "pacijent uzima Ramipril i KONTROLA za sedam dana"
+  expected: "Pacijent uzima Ramipril i KONTROLA za 7 dana"
+- name: spacing around punctuation
+  input: "glavobolja , mučnina .povraćanje"
+  expected: "Glavobolja, mučnina. Povraćanje"
+- name: no capital after p.o.
+  input: "paracetamol per os ujutro"
+  expected: "Paracetamol p.o. ujutro"
+- name: lines are capitalised
+  input: "anamneza dvotačka bol nova linija status dvotačka uredan"
+  expected: "Anamneza: bol\nStatus: uredan"
+- name: duplicate punctuation collapsed
+  input: "nalaz uredan tačka. kontrola"
+  expected: "Nalaz uredan. Kontrola"
+- name: empty
+  input: "   "
+  expected: ""

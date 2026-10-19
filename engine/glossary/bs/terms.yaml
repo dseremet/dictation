@@ -1,0 +1,29 @@
+# Bosnian: ijekavica + common bs lexical choices, self-mapping so the dictionary never flips them.
+terms:
+  - { canonical: lijek, variants: [], category: dialect }
+  - { canonical: lijekovi, variants: [], category: dialect }
+  - { canonical: liječenje, variants: [], category: dialect }
+  - { canonical: ljekar, variants: [], category: dialect }
+  - { canonical: ljekarski nalaz, variants: [], category: dialect }
+  - { canonical: mjesec, variants: [], category: dialect }
+  - { canonical: mjeseci, variants: [], category: dialect }
+  - { canonical: sedmica, variants: [], category: dialect }
+  - { canonical: dijete, variants: [], category: dialect }
+  - { canonical: crijevo, variants: [], category: dialect }
+  - { canonical: koljeno, variants: [], category: dialect }
+  - { canonical: vrijeme, variants: [], category: dialect }
+  - { canonical: bolesnik, variants: [], category: dialect }
+  - { canonical: hirurg, variants: [], category: dialect }
+  - { canonical: hirurgija, variants: [], category: dialect }
+  - { canonical: hemija, variants: [], category: dialect }
+  - { canonical: hronični, variants: [], category: dialect }
+  - { canonical: hronična, variants: [], category: dialect }
+  - { canonical: kisik, variants: [], category: dialect }
+  - { canonical: uputnica, variants: [], category: dialect }
+  - { canonical: opšte stanje, variants: [], category: dialect }
+  - { canonical: istorija bolesti, variants: [], category: dialect }
+  - { canonical: porodična anamneza, variants: [], category: dialect }
+  - { canonical: sljedeća kontrola, variants: [], category: dialect }
+  - { canonical: svijest, variants: [], category: dialect }
+  - { canonical: pri svijesti, variants: [], category: dialect }
+  - { canonical: krvni pritisak, variants: [], weight: 2, category: dialect }

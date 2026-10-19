@@ -1,0 +1,34 @@
+# Hardened example. The engine is reachable only from other services on the
+# same compose network (service name `dictation-engine`, port 8000). Uncomment
+# the `ports:` block to bind it to localhost for a curl smoke test.
+services:
+  dictation-engine:
+    image: ditactic/asr-engine:cpu          # or: build: { context: ., dockerfile: Dockerfile.cpu }
+    env_file: .env
+    environment:
+      ASR_TMP_DIR: /tmp/asr
+    volumes:
+      - asr-models:/models                   # weights, downloaded on first start
+    tmpfs:
+      - /tmp:size=1g,mode=1777               # uploads and decoded audio never touch disk
+    read_only: true
+    user: "10001:10001"
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    # ports:
+    #   - "127.0.0.1:8321:8000"
+    deploy:
+      resources:
+        limits:
+          memory: 4g
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8000/health"]
+      interval: 30s
+      timeout: 5s
+      start_period: 10m
+      retries: 3
+    restart: unless-stopped
+    stop_grace_period: 11m                    # let an in-flight dictation finish
+
+volumes:
+  asr-models:

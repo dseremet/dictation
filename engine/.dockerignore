@@ -1,0 +1,8 @@
+models/
+data/
+.pytest_cache/
+.ruff_cache/
+__pycache__/
+*.pyc
+eval/results/*.json
+.env

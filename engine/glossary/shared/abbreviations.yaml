@@ -1,0 +1,57 @@
+# Context gates: always | before_number | after_number | line_start_or_colon
+abbreviations:
+  - { canonical: EKG, variants: [e k g, ekg, elektrokardiogram, elektrokardiogrami] }
+  - { canonical: EEG, variants: [e e g, eeg, elektroencefalogram] }
+  - { canonical: EMG, variants: [e m g, emg, elektromiografija] }
+  - { canonical: CRP, variants: [c r p, crp, ce er pe, c reaktivni protein, cé er pé] }
+  - { canonical: SE, variants: [sedimentacija eritrocita], context: before_number }
+  - { canonical: KKS, variants: [k k s, kks, kompletna krvna slika] }
+  - { canonical: RR, variants: [er er, rr], context: before_number, or_words: [uredan, uredna, povišen, povišena, snižen, snižena, normalan, normotenzivan] }
+  - { canonical: TA, variants: [te a, ta], context: before_number, or_words: [uredna, povišena, snižena, normalna] }
+  - { canonical: SpO2, variants: [es pe o dva, saturacija kisikom, saturacija kiseonikom, spo dva, s p o 2], context: before_number }
+  - { canonical: BMI, variants: [b m i, bmi, indeks tjelesne mase, indeks telesne mase], context: before_number }
+  - { canonical: UZ, variants: [u z, ultrazvuk, ultrazvučni pregled] }
+  - { canonical: RTG, variants: [r t g, rtg, rendgen, rentgen, radiografija] }
+  - { canonical: CT, variants: [c t, ce te, kompjuterizovana tomografija, kompjuterizirana tomografija] }
+  - { canonical: MR, variants: [magnetna rezonanca, magnetska rezonancija, magnetna rezonancija, em er] }
+  - { canonical: EHO, variants: [ehokardiografija, eho srca] }
+  - { canonical: GUK, variants: [g u k, guk, glukoza u krvi], context: before_number }
+  - { canonical: HbA1c, variants: [hemoglobin a jedan ce, glikozilirani hemoglobin, glikirani hemoglobin, h b a jedan c, hba jedan c] }
+  - { canonical: LDL, variants: [l d l, el de el] }
+  - { canonical: HDL, variants: [h d l, ha de el] }
+  - { canonical: TSH, variants: [t s h, te es ha, tireostimulirajući hormon] }
+  - { canonical: PSA, variants: [p s a, pe es a, prostata specifični antigen] }
+  - { canonical: GGT, variants: [g g t, ge ge te, gama gt] }
+  - { canonical: ALT, variants: [a l t, alanin aminotransferaza], context: before_number }
+  - { canonical: AST, variants: [a s t, aspartat aminotransferaza], context: before_number }
+  - { canonical: INR, variants: [i n r, i en er], context: before_number }
+  - { canonical: PCR, variants: [p c r, pe ce er] }
+  - { canonical: KOPB, variants: [k o p b, kopb, hronična opstruktivna plućna bolest, kronična opstruktivna plućna bolest] }
+  - { canonical: HOBP, variants: [h o b p, hobp] }
+  - { canonical: DM, variants: [dijabetes melitus, diabetes mellitus], context: before_number }
+  - { canonical: HTA, variants: [h t a, ha te a] }
+  - { canonical: IM, variants: [infarkt miokarda], context: line_start_or_colon }
+  - { canonical: CVI, variants: [c v i, ce ve i, cerebrovaskularni inzult, cerebrovaskularni insult] }
+  - { canonical: TIA, variants: [t i a, tranzitorna ishemijska ataka, tranzitorni ishemijski atak] }
+  - { canonical: GERB, variants: [gastroezofagealna refluksna bolest, g e r b] }
+  - { canonical: "Dg.", variants: [dijagnoza, diagnoza, dg], context: line_start_or_colon }
+  - { canonical: "Th.", variants: [terapija, th], context: line_start_or_colon }
+  - { canonical: "Rp.", variants: [recept, rp], context: line_start_or_colon }
+  - { canonical: "Anamneza", variants: [anamneza], context: line_start_or_colon }
+  - { canonical: "St. praesens", variants: [status prezens, status praesens, sadašnje stanje], context: line_start_or_colon }
+  - { canonical: p.o., variants: [per os, peroralno, per oralno, pe o] }
+  - { canonical: i.v., variants: [intravenozno, intravenski, i ve, intravenozna, intra venozno] }
+  - { canonical: i.m., variants: [intramuskularno, intramuskularna, i em, intra muskularno] }
+  - { canonical: s.c., variants: [subkutano, supkutano, potkožno, es ce] }
+  - { canonical: tbl., variants: [tableta, tablete, tabletu, tabl], context: after_number }
+  - { canonical: amp., variants: [ampula, ampule, ampulu], context: after_number }
+  - { canonical: caps., variants: [kapsula, kapsule, kapsulu], context: after_number }
+  - { canonical: supp., variants: [supozitorij, supozitorija, supozitorije, čepić, čepića], context: after_number }
+  - { canonical: gtt., variants: [kapi, kap], context: after_number }
+  - { canonical: "1x dnevno", variants: [jednom dnevno, jedanput dnevno, jednom na dan] }
+  - { canonical: "2x dnevno", variants: [dva puta dnevno, dvaput dnevno, 2 puta dnevno, dva puta na dan, 2 puta na dan] }
+  - { canonical: "3x dnevno", variants: [tri puta dnevno, triput dnevno, 3 puta dnevno, tri puta na dan, 3 puta na dan] }
+  - { canonical: "4x dnevno", variants: [četiri puta dnevno, 4 puta dnevno, četiri puta na dan, 4 puta na dan] }
+  - { canonical: "b.o.", variants: [bez osobitosti, be o] }
+  - { canonical: "npr.", variants: [na primjer, na primer] }
+  - { canonical: "tzv.", variants: [takozvani, takozvana, takozvano] }

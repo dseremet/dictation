@@ -1,0 +1,27 @@
+- name: mg / ml / mcg / g
+  input: "petsto miligrama zarez deset mililitara zarez pedeset mikrograma zarez dva grama"
+  expected: "500 mg, 10 ml, 50 mcg, 2 g"
+- name: degrees
+  input: "temperatura trideset devet stepeni celzijusa zarez ranije trideset osam stepeni"
+  expected: "Temperatura 39 °C, ranije 38 °C"
+- name: percent glued
+  input: "saturacija devedeset osam posto zarez hematokrit četrdeset procenata"
+  expected: "Saturacija 98%, hematokrit 40%"
+- name: international units
+  input: "inzulin dvadeset jedinica zarez vitamin de hiljadu internacionalnih jedinica"
+  expected: "Inzulin 20 IJ, vitamin D 1000 IJ"
+- name: mEq and mmHg
+  input: "kalij četrdeset miliekvivalenata zarez pritisak sto dvadeset milimetara živinog stuba"
+  expected: "Kalij 40 mEq, pritisak 120 mmHg"
+- name: per hour / per minute / per kg
+  input: "infuzija sto mililitara na sat zarez puls osamdeset u minuti zarez doza pet miligrama po kilogramu"
+  expected: "Infuzija 100 ml/h, puls 80/min, doza 5 mg/kg"
+- name: mmol per litre
+  input: "glukoza pet zarez šest milimola po litri"
+  expected: "Glukoza 5,6 mmol/l"
+- name: glued symbol from whisper gets a space
+  input: "uzima 500mg paracetamola i 10ml sirupa"
+  expected: "Uzima 500 mg paracetamola i 10 ml sirupa"
+- name: unit phrase without a number stays
+  input: "doza u miligramima nije poznata"
+  expected: "Doza u miligramima nije poznata"

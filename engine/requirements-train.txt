@@ -1,0 +1,12 @@
+# GPU box only. Not installed in the serving images.
+torch>=2.3
+transformers>=4.44,<5
+peft>=0.12
+datasets>=2.20
+accelerate>=0.33
+soundfile>=0.12
+librosa>=0.10
+evaluate>=0.4
+jiwer>=3
+pyyaml>=6
+ctranslate2>=4,<5

@@ -1,0 +1,99 @@
+# Generic drug names in BHS spelling (as written on local prescriptions).
+terms:
+  - { canonical: paracetamol, variants: [para cetamol, paracetamolum], weight: 2, category: drug }
+  - { canonical: ibuprofen, variants: [ibu profen, ibuprofenum], weight: 2, category: drug }
+  - { canonical: diklofenak, variants: [diclofenac, diklo fenak, diklofenac], weight: 2, category: drug }
+  - { canonical: ketoprofen, variants: [keto profen], category: drug }
+  - { canonical: naproksen, variants: [naproxen, naprok sen], category: drug }
+  - { canonical: meloksikam, variants: [meloxicam, melok sikam], category: drug }
+  - { canonical: metamizol, variants: [meta mizol, metamizol natrij], category: drug }
+  - { canonical: tramadol, variants: [tra madol], category: drug }
+  - { canonical: acetilsalicilna kiselina, variants: [acetil salicilna kiselina], category: drug }
+  - { canonical: amoksicilin, variants: [amoxicillin, amoksi cilin, amoxicilin, amoksicilim, amoksicilina], weight: 2, category: drug }
+  - { canonical: amoksicilin s klavulanskom kiselinom, variants: [amoksicilin sa klavulanskom kiselinom], category: drug }
+  - { canonical: azitromicin, variants: [azitro micin, azithromycin], weight: 2, category: drug }
+  - { canonical: klaritromicin, variants: [klaritro micin, clarithromycin], category: drug }
+  - { canonical: cefiksim, variants: [cefixim, cefik sim], category: drug }
+  - { canonical: cefuroksim, variants: [cefuroxim, cefurok sim], category: drug }
+  - { canonical: ceftriakson, variants: [ceftriaxon, ceftri akson], category: drug }
+  - { canonical: ciprofloksacin, variants: [ciprofloxacin, ciproflok sacin], weight: 2, category: drug }
+  - { canonical: levofloksacin, variants: [levofloxacin, levoflok sacin], category: drug }
+  - { canonical: doksiciklin, variants: [doxycyclin, doksi ciklin], category: drug }
+  - { canonical: metronidazol, variants: [metro nidazol], category: drug }
+  - { canonical: nitrofurantoin, variants: [nitro furantoin], category: drug }
+  - { canonical: sulfametoksazol s trimetoprimom, variants: [sulfametoksazol sa trimetoprimom], category: drug }
+  - { canonical: flukonazol, variants: [fluconazol, fluko nazol], category: drug }
+  - { canonical: aciklovir, variants: [acyclovir, aciklo vir], category: drug }
+  - { canonical: omeprazol, variants: [ome prazol], weight: 2, category: drug }
+  - { canonical: pantoprazol, variants: [panto prazol], weight: 2, category: drug }
+  - { canonical: esomeprazol, variants: [esome prazol], category: drug }
+  - { canonical: ranitidin, variants: [rani tidin], category: drug }
+  - { canonical: metoklopramid, variants: [metoklo pramid, metoclopramid], category: drug }
+  - { canonical: laktuloza, variants: [lactuloza, lak tuloza], category: drug }
+  - { canonical: ramipril, variants: [rami pril], weight: 2, category: drug }
+  - { canonical: enalapril, variants: [ena lapril], weight: 2, category: drug }
+  - { canonical: lizinopril, variants: [lisinopril, lizino pril], category: drug }
+  - { canonical: perindopril, variants: [perindo pril], category: drug }
+  - { canonical: losartan, variants: [lo sartan], category: drug }
+  - { canonical: valsartan, variants: [val sartan], category: drug }
+  - { canonical: telmisartan, variants: [telmi sartan], category: drug }
+  - { canonical: amlodipin, variants: [amlo dipin], weight: 2, category: drug }
+  - { canonical: bisoprolol, variants: [biso prolol], weight: 2, category: drug }
+  - { canonical: metoprolol, variants: [meto prolol], category: drug }
+  - { canonical: nebivolol, variants: [nebi volol], category: drug }
+  - { canonical: karvedilol, variants: [carvedilol, karve dilol], category: drug }
+  - { canonical: propranolol, variants: [propra nolol], category: drug }
+  - { canonical: hidrohlorotiazid, variants: [hidroklorotiazid, hidro hlorotiazid, hydrochlorothiazid], category: drug }
+  - { canonical: indapamid, variants: [inda pamid], category: drug }
+  - { canonical: furosemid, variants: [furo semid], weight: 2, category: drug }
+  - { canonical: spironolakton, variants: [spirono lakton, spironolacton], category: drug }
+  - { canonical: atorvastatin, variants: [atorva statin], weight: 2, category: drug }
+  - { canonical: rosuvastatin, variants: [rosuva statin], weight: 2, category: drug }
+  - { canonical: simvastatin, variants: [simva statin], category: drug }
+  - { canonical: klopidogrel, variants: [clopidogrel, klopido grel], category: drug }
+  - { canonical: varfarin, variants: [warfarin, var farin], category: drug }
+  - { canonical: rivaroksaban, variants: [rivaroxaban, rivarok saban], category: drug }
+  - { canonical: apiksaban, variants: [apixaban, apik saban], category: drug }
+  - { canonical: enoksaparin, variants: [enoxaparin, enok saparin], category: drug }
+  - { canonical: nitroglicerin, variants: [nitro glicerin], category: drug }
+  - { canonical: amiodaron, variants: [amio daron], category: drug }
+  - { canonical: digoksin, variants: [digoxin, digok sin], category: drug }
+  - { canonical: metformin, variants: [met formin], weight: 2, category: drug }
+  - { canonical: gliklazid, variants: [gliclazid, gli klazid], category: drug }
+  - { canonical: glimepirid, variants: [glime pirid], category: drug }
+  - { canonical: sitagliptin, variants: [sita gliptin], category: drug }
+  - { canonical: empagliflozin, variants: [empa gliflozin], category: drug }
+  - { canonical: inzulin glargin, variants: [insulin glargin, inzulin glar gin], category: drug }
+  - { canonical: inzulin aspart, variants: [insulin aspart], category: drug }
+  - { canonical: levotiroksin, variants: [levotiroxin, levo tiroksin], weight: 2, category: drug }
+  - { canonical: tiamazol, variants: [thiamazol, tia mazol], category: drug }
+  - { canonical: prednizon, variants: [prednison, pred nizon], category: drug }
+  - { canonical: metilprednizolon, variants: [metilprednisolon, metil prednizolon], category: drug }
+  - { canonical: deksametazon, variants: [dexametazon, deksa metazon], category: drug }
+  - { canonical: salbutamol, variants: [salbu tamol], category: drug }
+  - { canonical: budezonid, variants: [budesonid, bude zonid], category: drug }
+  - { canonical: montelukast, variants: [monte lukast], category: drug }
+  - { canonical: loratadin, variants: [lora tadin], category: drug }
+  - { canonical: cetirizin, variants: [ceti rizin], category: drug }
+  - { canonical: desloratadin, variants: [deslora tadin], category: drug }
+  - { canonical: diazepam, variants: [dia zepam], category: drug }
+  - { canonical: bromazepam, variants: [broma zepam], category: drug }
+  - { canonical: alprazolam, variants: [alpra zolam], category: drug }
+  - { canonical: zolpidem, variants: [zol pidem], category: drug }
+  - { canonical: sertralin, variants: [ser tralin], category: drug }
+  - { canonical: escitalopram, variants: [es citalopram], category: drug }
+  - { canonical: fluoksetin, variants: [fluoxetin, fluok setin], category: drug }
+  - { canonical: pregabalin, variants: [prega balin], category: drug }
+  - { canonical: gabapentin, variants: [gaba pentin], category: drug }
+  - { canonical: karbamazepin, variants: [carbamazepin, karba mazepin], category: drug }
+  - { canonical: levetiracetam, variants: [leve tiracetam], category: drug }
+  - { canonical: alopurinol, variants: [allopurinol, alo purinol], category: drug }
+  - { canonical: kolhicin, variants: [colchicin, kol hicin], category: drug }
+  - { canonical: tamsulozin, variants: [tamsulosin, tamsu lozin], category: drug }
+  - { canonical: vitamin D, variants: [vitamin de, vitamin d], category: drug }
+  - { canonical: folna kiselina, variants: [folna kise lina], category: drug }
+  - { canonical: željezo, variants: [zeljezo], category: drug }
+  - { canonical: magnezij, variants: [], category: drug }
+  - { canonical: magnezijum, variants: [], category: drug }
+  - { canonical: kalij, variants: [], category: drug }
+  - { canonical: kalijum, variants: [], category: drug }

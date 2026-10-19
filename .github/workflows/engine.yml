@@ -1,0 +1,73 @@
+name: engine
+
+on:
+  push:
+    paths: ["engine/**", ".github/workflows/engine.yml"]
+  pull_request:
+    paths: ["engine/**", ".github/workflows/engine.yml"]
+
+concurrency:
+  group: engine-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    defaults:
+      run: { working-directory: engine }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: |
+            engine/requirements.txt
+            engine/requirements-dev.txt
+      - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg
+      - run: pip install -r requirements.txt -r requirements-dev.txt
+      - run: ruff check .
+      - run: pytest -m "not model"
+
+  model:
+    needs: unit
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run: { working-directory: engine }
+    env:
+      ASR_MODEL: tiny
+      ASR_COMPUTE_TYPE: int8
+      ASR_CACHE_DIR: ${{ github.workspace }}/engine/models
+      HF_HUB_DISABLE_TELEMETRY: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: |
+            engine/requirements.txt
+            engine/requirements-dev.txt
+      - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg
+      - run: pip install -r requirements.txt -r requirements-dev.txt
+      - uses: actions/cache@v4
+        with:
+          path: engine/models
+          key: whisper-tiny-ct2-${{ hashFiles('engine/requirements.txt') }}
+      - run: pytest -m model -ra
+
+  image:
+    needs: unit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/build-push-action@v6
+        with:
+          context: engine
+          file: engine/Dockerfile.cpu
+          push: false
+          tags: ditactic/asr-engine:cpu
+          cache-from: type=gha
+          cache-to: type=gha,mode=max

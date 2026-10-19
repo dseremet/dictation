@@ -1,0 +1,189 @@
+# Latin / BHS medical terms: diagnoses, anatomy, procedures, findings.
+# variants = frequent Whisper misrecognitions (whole words, case-insensitive).
+terms:
+  # --- cardiovascular ---
+  - { canonical: hipertenzija, variants: [hiper tenzija, hypertenzija, hipertensija], weight: 2, category: dg }
+  - { canonical: arterijska hipertenzija, variants: [arterijska hiper tenzija, arterijska hypertenzija], weight: 2, category: dg }
+  - { canonical: hipotenzija, variants: [hipo tenzija, hypotenzija], category: dg }
+  - { canonical: tahikardija, variants: [tahi kardija, tachikardija, tahikardia], category: dg }
+  - { canonical: bradikardija, variants: [bradi kardija, bradikardia], category: dg }
+  - { canonical: aritmija, variants: [aritmia, aritmije], category: dg }
+  - { canonical: fibrilacija atrija, variants: [fibrilacija atria, fibrilacija atrijuma, atrijalna fibrilacija], weight: 2, category: dg }
+  - { canonical: ekstrasistole, variants: [ekstra sistole, extrasistole], category: dg }
+  - { canonical: infarkt miokarda, variants: [infarkt mio karda, infarkt miokardija, infarct miokarda], weight: 2, category: dg }
+  - { canonical: angina pectoris, variants: [angina pektoris, angina pectoriz, anđina pektoris], weight: 2, category: dg }
+  - { canonical: insuficijencija, variants: [insuficiencija, insuficijencia], category: dg }
+  - { canonical: srčana insuficijencija, variants: [srčana insuficiencija, srcana insuficijencija], category: dg }
+  - { canonical: kardiomiopatija, variants: [kardio miopatija, kardiomiopatia], category: dg }
+  - { canonical: perikarditis, variants: [peri karditis], category: dg }
+  - { canonical: endokarditis, variants: [endo karditis], category: dg }
+  - { canonical: miokarditis, variants: [mio karditis], category: dg }
+  - { canonical: ateroskleroza, variants: [atero skleroza, arterioskleroza], category: dg }
+  - { canonical: tromboza, variants: [trom boza], category: dg }
+  - { canonical: duboka venska tromboza, variants: [duboka venska trom boza], category: dg }
+  - { canonical: tromboflebitis, variants: [trombo flebitis], category: dg }
+  - { canonical: plućna embolija, variants: [plućna embolia, plucna embolija], weight: 2, category: dg }
+  - { canonical: varikoziteti, variants: [variko ziteti, varikozitet], category: dg }
+  - { canonical: aneurizma, variants: [aneurisma, aneurysma], category: dg }
+  - { canonical: stenoza, variants: [stenoza], category: dg }
+  - { canonical: aortna stenoza, variants: [aortna stenosa, aortalna stenoza], category: dg }
+  - { canonical: mitralna regurgitacija, variants: [mitralna regurgitacia], category: dg }
+  - { canonical: sistolni, variants: [sistolni], category: finding }
+  - { canonical: dijastolni, variants: [diastolni, dijastolični], category: finding }
+  # --- respiratory ---
+  # Latin and BHS spellings are both legitimate (Dg. lines are Latin, prose is
+  # BHS); never rewrite one into the other, only fix misrecognitions.
+  - { canonical: pneumonija, variants: [pneu monija, pnemonija], weight: 2, category: dg }
+  - { canonical: pneumonia, variants: [pneu monia, pnemonia], weight: 2, category: dg }
+  - { canonical: bronhitis, variants: [bron hitis, bronchitis], category: dg }
+  - { canonical: bronhopneumonija, variants: [bronho pneumonija], category: dg }
+  - { canonical: bronhopneumonia, variants: [bronho pneumonia], category: dg }
+  - { canonical: astma, variants: [asma, ašma], weight: 2, category: dg }
+  - { canonical: bronhijalna astma, variants: [bronhialna astma, bronhijalna asma], category: dg }
+  - { canonical: emfizem, variants: [em fizem, emphizem], category: dg }
+  - { canonical: pleuralni izljev, variants: [pleuralni izliv, pleuralni izlev, pleuralni izljev], category: dg }
+  - { canonical: pneumotoraks, variants: [pneumo toraks, pneumothorax], category: dg }
+  - { canonical: dispneja, variants: [dis pneja, dispnea, dispnoja], category: sym }
+  - { canonical: tahipneja, variants: [tahi pneja, tahipnea], category: sym }
+  - { canonical: auskultacija, variants: [auskul tacija, auskultacia], category: proc }
+  - { canonical: auskultatorno, variants: [auskul tatorno, auskultatorni], category: finding }
+  - { canonical: vezikularno disanje, variants: [vezikularno disanje, vesikularno disanje], category: finding }
+  - { canonical: krepitacije, variants: [krepi tacije, krepitacie], category: finding }
+  - { canonical: faringitis, variants: [farin gitis, pharyngitis], category: dg }
+  - { canonical: laringitis, variants: [larin gitis, laryngitis], category: dg }
+  - { canonical: tonzilitis, variants: [tonsilitis, tonzi litis, angina tonsillaris], category: dg }
+  - { canonical: sinusitis, variants: [sinu sitis, sinuzitis], category: dg }
+  - { canonical: rinitis, variants: [rhinitis, ri nitis], category: dg }
+  - { canonical: otitis media, variants: [otitis medija, otitis medie], category: dg }
+  # --- gastro ---
+  - { canonical: gastritis, variants: [gas tritis], weight: 2, category: dg }
+  - { canonical: gastroenteritis, variants: [gastro enteritis], category: dg }
+  - { canonical: ulcus ventriculi, variants: [ulkus ventrikuli, ulcus ventrikuli, ulkus ventriculi], category: dg }
+  - { canonical: ulcus duodeni, variants: [ulkus duodeni, ulcus duo deni], category: dg }
+  - { canonical: Helicobacter pylori, variants: [helikobakter pilori, helicobacter pilori, helikobakter pylori, helikobakter], weight: 2, category: micro }
+  - { canonical: refluks, variants: [reflux, re fluks], category: dg }
+  - { canonical: gastroezofagealni refluks, variants: [gastro ezofagealni refluks, gastroezofagealni reflux], category: dg }
+  - { canonical: holecistitis, variants: [hole cistitis, kolecistitis, cholecystitis], category: dg }
+  - { canonical: holelitijaza, variants: [hole litijaza, kolelitijaza, cholelithiasis], category: dg }
+  - { canonical: pankreatitis, variants: [pankre atitis, pancreatitis], category: dg }
+  - { canonical: apendicitis, variants: [apendi citis, appendicitis], category: dg }
+  - { canonical: hepatitis, variants: [hepa titis], category: dg }
+  - { canonical: steatoza jetre, variants: [steatosa jetre, masna jetra], category: dg }
+  - { canonical: ciroza jetre, variants: [cirosa jetre, cirroza jetre], category: dg }
+  - { canonical: hemoroidi, variants: [hemo roidi, hemeroidi], category: dg }
+  - { canonical: divertikulitis, variants: [diverti kulitis], category: dg }
+  - { canonical: opstipacija, variants: [opsti pacija, obstipacija], category: sym }
+  - { canonical: dijareja, variants: [diareja, dia reja], category: sym }
+  - { canonical: hernija, variants: [hernia, her nija], category: dg }
+  - { canonical: ingvinalna hernija, variants: [ingvinalna hernia, inguinalna hernija], category: dg }
+  - { canonical: hijatalna hernija, variants: [hiatalna hernija, hijatalna hernia], category: dg }
+  - { canonical: abdomen, variants: [abdo men], category: anat }
+  - { canonical: epigastrij, variants: [epi gastrij, epigastrijum], category: anat }
+  - { canonical: hepatomegalija, variants: [hepato megalija], category: finding }
+  - { canonical: splenomegalija, variants: [spleno megalija], category: finding }
+  # --- endocrine / metabolic ---
+  - { canonical: dijabetes, variants: [diabetes, dia betes, diabetis], weight: 2, category: dg }
+  - { canonical: dijabetes melitus, variants: [diabetes melitus, dijabetes mellitus, diabetes mellitus], weight: 2, category: dg }
+  - { canonical: dijabetes melitus tip 2, variants: [dijabetes melitus tip dva, diabetes melitus tip dva, dijabetes tip dva], weight: 2, category: dg }
+  - { canonical: dijabetes melitus tip 1, variants: [dijabetes melitus tip jedan, diabetes melitus tip jedan, dijabetes tip jedan], category: dg }
+  - { canonical: hiperglikemija, variants: [hiper glikemija], category: finding }
+  - { canonical: hipoglikemija, variants: [hipo glikemija], category: finding }
+  - { canonical: hiperlipidemija, variants: [hiper lipidemija], category: dg }
+  - { canonical: hiperholesterolemija, variants: [hiper holesterolemija, hiperkolesterolemija], category: dg }
+  - { canonical: hipotireoza, variants: [hipo tireoza, hipotiroza, hipotireoidizam], category: dg }
+  - { canonical: hipertireoza, variants: [hiper tireoza, hipertiroza, hipertireoidizam], category: dg }
+  - { canonical: Hashimoto tireoiditis, variants: [hašimoto tireoiditis, hashimoto tiroiditis, hašimoto], category: dg }
+  - { canonical: struma, variants: [stru ma], category: dg }
+  - { canonical: gojaznost, variants: [adipozitas], category: dg }
+  - { canonical: osteoporoza, variants: [osteo poroza], category: dg }
+  - { canonical: giht, variants: [gicht], category: dg }
+  # --- neuro / psych ---
+  - { canonical: cefaleja, variants: [cefalea, cefa leja], category: sym }
+  - { canonical: migrena, variants: [mi grena], category: dg }
+  - { canonical: vertigo, variants: [ver tigo], category: sym }
+  - { canonical: epilepsija, variants: [epi lepsija, epilepsia], category: dg }
+  - { canonical: polineuropatija, variants: [poli neuropatija, polineuropatia], category: dg }
+  - { canonical: parestezije, variants: [pares tezije, parestesije], category: sym }
+  - { canonical: lumboishialgija, variants: [lumbo ishialgija, lumboišialgija, lumboishialgia], weight: 2, category: dg }
+  - { canonical: cervikalni sindrom, variants: [cervikalni sin drom, cervikal sindrom], category: dg }
+  - { canonical: lumbalni sindrom, variants: [lumbalni sin drom], category: dg }
+  - { canonical: diskus hernija, variants: [diskus hernia, discus hernija, hernija diska], category: dg }
+  - { canonical: anksioznost, variants: [anksio znost, anxioznost], category: dg }
+  - { canonical: depresija, variants: [de presija], category: dg }
+  - { canonical: insomnija, variants: [insomnia], category: sym }
+  - { canonical: demencija, variants: [demencia], category: dg }
+  - { canonical: Parkinsonova bolest, variants: [parkinsonova bolest, parkinson], category: dg }
+  # --- urology / nephro / gyn ---
+  - { canonical: uroinfekcija, variants: [uro infekcija, urinarna infekcija], weight: 2, category: dg }
+  - { canonical: cistitis, variants: [cis titis, cystitis], category: dg }
+  - { canonical: pijelonefritis, variants: [pielonefritis, pijelo nefritis], category: dg }
+  - { canonical: nefrolitijaza, variants: [nefro litijaza], category: dg }
+  - { canonical: renalna kolika, variants: [renalna kolika], category: dg }
+  - { canonical: hronična bubrežna insuficijencija, variants: [hronična bubrežna insuficiencija], category: dg }
+  - { canonical: kronična bubrežna insuficijencija, variants: [kronična bubrežna insuficiencija], category: dg }
+  - { canonical: benigna hiperplazija prostate, variants: [benigna hiper plazija prostate, benigna hiperplasija prostate], category: dg }
+  - { canonical: hematurija, variants: [hema turija, hematuria], category: finding }
+  - { canonical: proteinurija, variants: [proteinuria, protein urija], category: finding }
+  - { canonical: dizurija, variants: [disurija, dizuria], category: sym }
+  - { canonical: menopauza, variants: [meno pauza], category: dg }
+  - { canonical: dismenoreja, variants: [dismenorea, dis menoreja], category: dg }
+  - { canonical: vaginitis, variants: [vagi nitis], category: dg }
+  - { canonical: miom uterusa, variants: [miom uterusa, mioma uterusa], category: dg }
+  # --- musculoskeletal / derm / misc ---
+  - { canonical: artroza, variants: [ar troza, arthroza], category: dg }
+  - { canonical: gonartroza, variants: [gon artroza], category: dg }
+  - { canonical: koksartroza, variants: [koks artroza, coxarthrosis], category: dg }
+  - { canonical: reumatoidni artritis, variants: [reumatoidni ar tritis, reumatoidni artritis], category: dg }
+  - { canonical: spondiloza, variants: [spondi loza, spondilosis], category: dg }
+  - { canonical: skolioza, variants: [skoli oza, scoliosis], category: dg }
+  - { canonical: tendinitis, variants: [tendi nitis], category: dg }
+  - { canonical: burzitis, variants: [bur zitis, bursitis], category: dg }
+  - { canonical: fraktura, variants: [frak tura, fractura], category: dg }
+  - { canonical: distorzija, variants: [distor zija, distorsija], category: dg }
+  - { canonical: kontuzija, variants: [kon tuzija, contusio], category: dg }
+  - { canonical: dermatitis, variants: [derma titis], category: dg }
+  - { canonical: atopijski dermatitis, variants: [atopijski derma titis, atopični dermatitis], category: dg }
+  - { canonical: psorijaza, variants: [psoriaza, pso rijaza, psoriasis], category: dg }
+  - { canonical: urtikarija, variants: [urti karija, urticaria], category: dg }
+  - { canonical: herpes zoster, variants: [herpes zos ter, herpez zoster], category: dg }
+  - { canonical: anemija, variants: [ane mija, anemia], weight: 2, category: dg }
+  - { canonical: sideropenijska anemija, variants: [sideropenična anemija, sidero penijska anemija], category: dg }
+  - { canonical: leukocitoza, variants: [leuko citoza], category: finding }
+  - { canonical: trombocitopenija, variants: [trombo citopenija], category: finding }
+  - { canonical: limfadenopatija, variants: [limfa denopatija], category: finding }
+  - { canonical: alergija, variants: [aler gija], category: dg }
+  - { canonical: anafilaksija, variants: [anafilaksa, ana filaksija], category: dg }
+  - { canonical: febrilan, variants: [feb rilan], category: finding }
+  - { canonical: afebrilan, variants: [afeb rilan, a febrilan], category: finding }
+  - { canonical: subfebrilan, variants: [sub febrilan], category: finding }
+  - { canonical: eupnoičan, variants: [eup noičan, eupnoican], category: finding }
+  - { canonical: orijentisan, variants: [orijen tisan], category: finding }
+  - { canonical: orijentiran, variants: [orijen tiran], category: finding }
+  - { canonical: palpatorno, variants: [palpa torno], category: finding }
+  - { canonical: perkutorno, variants: [perku torno], category: finding }
+  - { canonical: edem, variants: [e dem, oedem], category: finding }
+  - { canonical: pretibijalni edemi, variants: [pretibialni edemi, pre tibijalni edemi], category: finding }
+  - { canonical: cijanoza, variants: [cia noza, cijanosa], category: finding }
+  - { canonical: ikterus, variants: [ik terus, icterus], category: finding }
+  - { canonical: konjuktivitis, variants: [konjunktivitis, konjuk tivitis], category: dg }
+  - { canonical: katarakta, variants: [kata rakta], category: dg }
+  - { canonical: glaukom, variants: [glau kom], category: dg }
+  - { canonical: karcinom, variants: [kar cinom, carcinoma], weight: 2, category: dg }
+  - { canonical: adenokarcinom, variants: [adeno karcinom], category: dg }
+  - { canonical: metastaze, variants: [meta staze], category: dg }
+  - { canonical: biopsija, variants: [bio psija], category: proc }
+  - { canonical: gastroskopija, variants: [gastro skopija], category: proc }
+  - { canonical: kolonoskopija, variants: [kolono skopija, colonoscopia], category: proc }
+  - { canonical: ehokardiografija, variants: [eho kardiografija, ehokardiografia], category: proc }
+  - { canonical: ergometrija, variants: [ergo metrija], category: proc }
+  - { canonical: holter, variants: [hol ter], category: proc }
+  - { canonical: spirometrija, variants: [spiro metrija], category: proc }
+  - { canonical: apendektomija, variants: [apendek tomija, appendectomia], category: proc }
+  - { canonical: holecistektomija, variants: [holecis tektomija, kolecistektomija], category: proc }
+  - { canonical: artroskopija, variants: [artro skopija], category: proc }
+  - { canonical: kateterizacija, variants: [katete rizacija], category: proc }
+  - { canonical: anamneza, variants: [anam neza], category: section }
+  - { canonical: status, variants: [sta tus], category: section }
+  - { canonical: dijagnoza, variants: [diag noza], category: section }
+  - { canonical: terapija, variants: [tera pija], category: section }
+  - { canonical: kontrola, variants: [kon trola], category: section }

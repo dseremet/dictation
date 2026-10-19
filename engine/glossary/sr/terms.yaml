@@ -1,0 +1,29 @@
+# Serbian: ekavica + sr lexical choices (lekar, pritisak, kiseonik), self-mapping.
+terms:
+  - { canonical: lek, variants: [], category: dialect }
+  - { canonical: lekovi, variants: [], category: dialect }
+  - { canonical: lečenje, variants: [], category: dialect }
+  - { canonical: lekar, variants: [], category: dialect }
+  - { canonical: lekarski nalaz, variants: [], category: dialect }
+  - { canonical: mesec, variants: [], category: dialect }
+  - { canonical: meseci, variants: [], category: dialect }
+  - { canonical: nedelja, variants: [], category: dialect }
+  - { canonical: dete, variants: [], category: dialect }
+  - { canonical: crevo, variants: [], category: dialect }
+  - { canonical: koleno, variants: [], category: dialect }
+  - { canonical: vreme, variants: [], category: dialect }
+  - { canonical: bolesnik, variants: [], category: dialect }
+  - { canonical: hirurg, variants: [], category: dialect }
+  - { canonical: hirurgija, variants: [], category: dialect }
+  - { canonical: hemija, variants: [], category: dialect }
+  - { canonical: hronični, variants: [], category: dialect }
+  - { canonical: hronična, variants: [], category: dialect }
+  - { canonical: kiseonik, variants: [], category: dialect }
+  - { canonical: uput, variants: [], category: dialect }
+  - { canonical: opšte stanje, variants: [], category: dialect }
+  - { canonical: istorija bolesti, variants: [], category: dialect }
+  - { canonical: porodična anamneza, variants: [], category: dialect }
+  - { canonical: sledeća kontrola, variants: [], category: dialect }
+  - { canonical: svest, variants: [], category: dialect }
+  - { canonical: pri svesti, variants: [], category: dialect }
+  - { canonical: krvni pritisak, variants: [], weight: 2, category: dialect }

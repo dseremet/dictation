@@ -1,0 +1,15 @@
+# Spoken punctuation (Croatian).
+commands:
+  - { output: ".", phrases: [točka, tocka, tačka, tacka], attach: left, not_after: [bolna, bolnu, tlačna, tlačnu, ulazna, izlazna, najbolnija, ova, ta, jedna, svaka, slaba, jaka, akupunkturna, trigger] }
+  - { output: ",", phrases: [zarez], attach: left }
+  - { output: ";", phrases: [točka zarez, tocka zarez, točka-zarez, tačka zarez, tacka zarez], attach: left }
+  - { output: ":", phrases: [dvotočka, dvotocka, dvije točke, dvotačka, dvotacka, dvije tačke], attach: left }
+  - { output: "?", phrases: [upitnik], attach: left }
+  - { output: "!", phrases: [uskličnik, usklicnik], attach: left }
+  - { output: "\n", phrases: [novi red, nova linija, novi redak, u novi red], attach: newline }
+  - { output: "\n\n", phrases: [novi odlomak, novi pasus, novi paragraf, nova stavka], attach: newline }
+  - { output: "(", phrases: [otvorena zagrada, otvori zagradu, zagrada otvorena, u zagradi], attach: right }
+  - { output: ")", phrases: [zatvorena zagrada, zatvori zagradu, zagrada zatvorena, kraj zagrade], attach: left }
+  - { output: "-", phrases: [crtica, spojnica, povlaka], attach: none }
+  - { output: "/", phrases: [kosa crta], attach: none }
+  - { output: "\"", phrases: [navodnici, pod navodnicima], attach: none }

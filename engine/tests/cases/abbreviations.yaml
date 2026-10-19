@@ -1,0 +1,42 @@
+- name: EKG / CRP always
+  input: "elektrokardiogram uredan zarez ce er pe povišen"
+  expected: "EKG uredan, CRP povišen"
+- name: TA before number
+  input: "te a sto dvadeset sa osamdeset"
+  expected: "TA 120/80"
+- name: TA before uredna
+  input: "te a uredna zarez puls uredan"
+  expected: "TA uredna, puls uredan"
+- name: ta as a pronoun is untouched
+  input: "ta pacijentica dolazi sutra"
+  expected: "Ta pacijentica dolazi sutra"
+- name: RR before number and as abbreviation already
+  input: "er er sto deset sa sedamdeset zarez RR uredan"
+  expected: "RR 110/70, RR uredan"
+- name: Dg / Th at line start or before colon
+  input: "dijagnoza dvotačka hipertenzija nova linija terapija dvotačka ramipril"
+  expected: "Dg: hipertenzija\nTh: ramipril"
+- name: dijagnoza mid-sentence is a word
+  input: "postavljena je dijagnoza hipertenzije"
+  expected: "Postavljena je dijagnoza hipertenzije"
+- name: routes of administration
+  input: "paracetamol per os zarez ceftriakson intravenozno zarez diklofenak intramuskularno zarez enoksaparin subkutano"
+  expected: "Paracetamol p.o., ceftriakson i.v., diklofenak i.m., enoksaparin s.c."
+- name: tbl / amp / caps after number only
+  input: "dvije tablete ujutro zarez tablete uzima redovno zarez jedna ampula"
+  expected: "2 tbl. ujutro, tablete uzima redovno, 1 amp."
+- name: dosing frequency
+  input: "amoksicilin tri puta dnevno zarez pantoprazol jednom dnevno"
+  expected: "Amoksicilin 3x dnevno, pantoprazol 1x dnevno"
+- name: imaging
+  input: "ultrazvuk abdomena uredan zarez rendgen pluća be o"
+  expected: "UZ abdomena uredan, RTG pluća b.o."
+- name: KOPB / HbA1c / SpO2
+  input: "hronična opstruktivna plućna bolest zarez hemoglobin a jedan ce sedam posto zarez saturacija kisikom devedeset pet"
+  expected: "KOPB, HbA1c 7%, SpO2 95"
+- name: abbreviation at the end of a sentence keeps one period
+  input: "urađen je elektrokardiogram tačka nalaz uredan"
+  expected: "Urađen je EKG. Nalaz uredan"
+- name: whisper spelling diagnoza before a colon
+  input: "Diagnoza dvotačka pneumonia bilateralis tačka"
+  expected: "Dg: pneumonia bilateralis."

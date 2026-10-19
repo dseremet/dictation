@@ -1,0 +1,39 @@
+name: JS packages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'packages/protocol/**'
+      - 'packages/vue/**'
+      - 'packages/react-native/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/js.yml'
+  pull_request:
+    paths:
+      - 'packages/protocol/**'
+      - 'packages/vue/**'
+      - 'packages/react-native/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/js.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci
+      # protocol first: vue resolves it through the workspace symlink and needs its dist.
+      - run: npm run build -w packages/protocol
+      - run: npm run build -w packages/vue
+      - run: npm run build -w packages/react-native
+      - run: npm test --workspaces --if-present

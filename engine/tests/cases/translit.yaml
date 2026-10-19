@@ -1,0 +1,15 @@
+- name: serbian cyrillic to latin
+  language: sr
+  input: "Пацијент наводи болове у леђима тачка узима лек"
+  expected: "Pacijent navodi bolove u leđima. Uzima lek"
+- name: digraphs
+  language: sr
+  input: "љекар и њега зарез џеп"
+  expected: "Ljekar i njega, džep"
+- name: uppercase digraph in all caps word
+  language: sr
+  input: "ЉЕКАР"
+  expected: "LJEKAR"
+- name: nfc normalisation
+  input: "pacijent je afebrilan"
+  expected: "Pacijent je afebrilan"

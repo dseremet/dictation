@@ -1,0 +1,47 @@
+- name: full stop + capitalisation of the next sentence
+  input: "pacijent se žali na glavobolju tačka uzima paracetamol tačka"
+  expected: "Pacijent se žali na glavobolju. Uzima paracetamol."
+- name: comma and colon
+  input: "dijagnoza dvotačka gastritis zarez refluks"
+  expected: "Dg: gastritis, refluks"
+- name: hr točka / dvotočka
+  language: hr
+  input: "terapija dvotočka pantoprazol točka kontrola za mjesec dana točka"
+  expected: "Th: pantoprazol. Kontrola za mjesec dana."
+- name: sr zapeta
+  language: sr
+  input: "bolovi u leđima zapeta trnjenje nogu tačka"
+  expected: "Bolovi u leđima, trnjenje nogu."
+- name: new line and paragraph
+  input: "anamneza dvotačka bolovi tačka nova linija status dvotačka uredan tačka novi pasus terapija dvotačka mirovanje"
+  expected: "Anamneza: bolovi.\nStatus: uredan.\n\nTh: mirovanje"
+- name: parentheses
+  input: "uzima ramipril otvorena zagrada pet miligrama zatvorena zagrada ujutro"
+  expected: "Uzima ramipril (5 mg) ujutro"
+- name: question and exclamation marks
+  input: "da li uzima terapiju upitnik hitno uzvičnik"
+  expected: "Da li uzima terapiju? Hitno!"
+- name: semicolon
+  input: "kašalj tačka zarez temperatura"
+  expected: "Kašalj; temperatura"
+- name: anatomy, not punctuation (not_after gate)
+  input: "bolna tačka u desnom hipohondriju"
+  expected: "Bolna tačka u desnom hipohondriju"
+- name: pritisna tačka stays
+  input: "pritisna tačka iznad lakta tačka"
+  expected: "Pritisna tačka iznad lakta."
+- name: whisper already placed the period
+  input: "Pacijent je afebrilan tačka. Status uredan."
+  expected: "Pacijent je afebrilan. Status uredan."
+- name: whisper already placed the comma
+  input: "glavobolja, zarez, mučnina"
+  expected: "Glavobolja, mučnina"
+- name: dictated period after a number ends the sentence
+  input: "puls sto dvadeset tačka pacijent anksiozan"
+  expected: "Puls 120. Pacijent anksiozan"
+- name: whisper ordinal after a number does not capitalise
+  input: "kontrola 2. dan nakon terapije"
+  expected: "Kontrola 2. dan nakon terapije"
+- name: slash
+  input: "nalaz kosa crta kontrola"
+  expected: "Nalaz / kontrola"

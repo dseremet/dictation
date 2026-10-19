@@ -1,0 +1,11 @@
+# One-shot converter: transformers Whisper checkpoint -> CTranslate2 directory.
+# Usage: make convert SRC=ditactic/whisper-large-v3-turbo-bhs-medical OUT=/models/custom QUANT=int8
+FROM python:3.11-slim
+
+ENV PIP_NO_CACHE_DIR=1 HF_HUB_DISABLE_TELEMETRY=1 HF_HOME=/models/hf
+RUN pip install --upgrade pip \
+ && pip install "ctranslate2>=4,<5" "transformers>=4.44,<5" "torch>=2.3" "huggingface_hub>=0.23" sentencepiece
+
+WORKDIR /work
+ENTRYPOINT ["ct2-transformers-converter"]
+# e.g. --model openai/whisper-large-v3-turbo --output_dir /models/turbo-int8 --quantization int8 --copy_files tokenizer.json preprocessor_config.json

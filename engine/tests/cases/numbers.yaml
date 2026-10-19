@@ -1,0 +1,93 @@
+- name: blood pressure after pritisak
+  input: "pritisak sto dvadeset sa osamdeset tačka"
+  expected: "Pritisak 120/80."
+- name: blood pressure after tlak (hr)
+  language: hr
+  input: "tlak sto trideset pet kroz osamdeset pet"
+  expected: "Tlak 135/85"
+- name: blood pressure after RR / TA letters
+  input: "er er sto deset sa sedamdeset zarez te a sto četrdeset na devedeset"
+  expected: "RR 110/70, TA 140/90"
+- name: blood pressure with digits already
+  input: "pritisak 120 sa 80"
+  expected: "Pritisak 120/80"
+- name: blood pressure with filler words
+  input: "pritisak je bio sto pedeset sa devedeset pet"
+  expected: "Pritisak je bio 150/95"
+- name: sa without a pressure keyword is not a fraction
+  input: "došao sa trideset godina"
+  expected: "Došao sa 30 godina"
+- name: dvjesto / dvjesta / dvesta / tisuću / hiljadu
+  input: "dvjesto pedeset miligrama zarez dvesta grama zarez hiljadu mililitara zarez tisuću dvjesta"
+  expected: "250 mg, 200 g, 1000 ml, 1200"
+- name: thousands with multiplier
+  input: "pet hiljada petsto i dvije tisuće"
+  expected: "5500 i 2000"
+- name: small numbers stay words
+  input: "pacijent ima dva brata i tri sestre"
+  expected: "Pacijent ima dva brata i tri sestre"
+- name: small number before a unit converts
+  input: "uzima dva miligrama zarez pet mililitara zarez tri puta dnevno"
+  expected: "Uzima 2 mg, 5 ml, 3x dnevno"
+- name: gendered forms
+  input: "dvije tablete zarez dve kapsule zarez jedna ampula"
+  expected: "2 tbl., 2 caps., 1 amp."
+- name: decimal with zarez
+  input: "temperatura trideset osam zarez pet"
+  expected: "Temperatura 38,5"
+- name: decimal with cijelih / celih
+  input: "šećer šest cijelih tri zarez hemoglobin dvanaest celih osam"
+  expected: "Šećer 6,3, hemoglobin 12,8"
+- name: decimal with leading zeros
+  input: "nula zarez nula pet miligrama"
+  expected: "0,05 mg"
+- name: i po
+  input: "dva i po mjeseca zarez jedan i po sat"
+  expected: "2,5 mjeseca, 1,5 sat"
+- name: percent and puta
+  input: "saturacija devedeset šest posto zarez dva puta sedmično"
+  expected: "Saturacija 96%, 2 puta sedmično"
+- name: zarez between number and word is a comma
+  input: "trideset zarez pacijent"
+  expected: "30, pacijent"
+- name: range follows the converting side
+  input: "od pet do deset dana"
+  expected: "Od 5 do 10 dana"
+- name: lone sto as table is kept
+  input: "legao na sto i zaspao"
+  expected: "Legao na sto i zaspao"
+- name: lone sto after a measurement word converts
+  input: "puls sto zarez saturacija sto posto"
+  expected: "Puls 100, saturacija 100%"
+- name: trideset i pet (hr)
+  language: hr
+  input: "trideset i pet godina"
+  expected: "35 godina"
+- name: ordinal years
+  input: "operisan dvije hiljade devetnaeste godine zarez rođen hiljadu devetsto osamdeset pete"
+  expected: "Operisan 2019. godine, rođen 1985."
+- name: ordinal year with tens
+  input: "kontrola dvije hiljade dvadeset prve"
+  expected: "Kontrola 2021."
+- name: plain ordinal is not a year
+  input: "dvadeset pete sedmice trudnoće"
+  expected: "Dvadeset pete sedmice trudnoće"
+- name: decimal fraction never swallows thousands
+  input: "pet hiljada petsto zarez dvije tisuće"
+  expected: "5500, 2000"
+- name: age
+  input: "pacijentica stara šezdeset sedam godina"
+  expected: "Pacijentica stara 67 godina"
+- name: cyrillic numbers
+  language: sr
+  input: "пулс деведесет два"
+  expected: "Puls 92"
+- name: digit blood pressure with a dash is rewritten
+  input: "Pritisak 120-80, puls 72."
+  expected: "Pritisak 120/80, puls 72."
+- name: digit blood pressure with a comma is rewritten
+  input: "TA 120,80. RR 130 85."
+  expected: "TA 120/80. RR 130/85."
+- name: digit pairs without a pressure keyword are left alone
+  input: "Rođen 1980-12. Doza 10-20 mg."
+  expected: "Rođen 1980-12. Doza 10-20 mg."

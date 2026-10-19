@@ -1,0 +1,20 @@
+{
+  "name": "dictation-monorepo",
+  "private": true,
+  "description": "Open-source speech-to-text for Bosnian/Croatian/Serbian medical dictation: self-hosted engine, Laravel, Vue and React Native packages.",
+  "license": "MIT",
+  "workspaces": [
+    "packages/protocol",
+    "packages/vue",
+    "packages/react-native"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "test:engine": "make -C engine test",
+    "test:laravel": "cd packages/laravel && composer test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

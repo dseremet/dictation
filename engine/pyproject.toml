@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ditactic-asr-engine"
+version = "0.1.0"
+description = "Self-hosted, OpenAI-compatible speech-to-text engine for Bosnian/Croatian/Serbian medical dictation (faster-whisper + BHS normaliser)."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+authors = [{ name = "diTactic Media" }]
+dependencies = [
+  "fastapi>=0.115,<1",
+  "uvicorn[standard]>=0.30",
+  "python-multipart>=0.0.9",
+  "pydantic>=2,<3",
+  "pydantic-settings>=2,<3",
+  "faster-whisper>=1.2,<2",
+  "ctranslate2>=4,<5",
+  "numpy>=1.26",
+  "pyyaml>=6",
+  "huggingface_hub>=0.23",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "httpx>=0.27", "jiwer>=3", "ruff>=0.6"]
+
+[tool.setuptools.packages.find]
+include = ["asr_engine*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "training", "eval"]
+markers = [
+  "model: needs a downloaded Whisper model (slow, network on first run)",
+]
+addopts = "-ra"
+pythonpath = ["."]
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = ["models", "data", "eval/results"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "W", "N", "SIM", "RUF"]
+ignore = ["RUF001", "RUF002", "RUF003", "B008", "E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["N802", "N806"]

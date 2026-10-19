@@ -1,0 +1,26 @@
+# Spoken units after a number. Longest phrases win. attach: space | glue | suffix
+units:
+  - { symbol: mcg, phrases: [mikrograma, mikrogram, mikrograme, mikrogrami, mkg] }
+  - { symbol: mg, phrases: [miligrama, miligram, miligrame, miligrami, mg] }
+  - { symbol: g, phrases: [grama, gram, grame, grami] }
+  - { symbol: kg, phrases: [kilograma, kilogram, kilograme, kila, kile, kilo] }
+  - { symbol: ml, phrases: [mililitara, mililitar, mililitra, mililitre, mililitri] }
+  - { symbol: dl, phrases: [decilitara, decilitar, decilitra, decilitre] }
+  - { symbol: l, phrases: [litara, litar, litra, litre, litri] }
+  - { symbol: mm, phrases: [milimetara, milimetar, milimetra, milimetre] }
+  - { symbol: cm, phrases: [centimetara, centimetar, centimetra, centimetre] }
+  - { symbol: m, phrases: [metara, metar, metra] }
+  - { symbol: mmHg, phrases: [milimetara živinog stuba, milimetara žive, milimetara stuba žive, mm hg, mm živinog stuba, milimetara živin stupca, mm živa] }
+  - { symbol: IJ, phrases: [internacionalnih jedinica, internacionalne jedinice, međunarodnih jedinica, međunarodne jedinice, jedinica, jedinice, i j] }
+  - { symbol: mEq, phrases: [miliekvivalenata, miliekvivalenta, miliekvivalent] }
+  - { symbol: mmol, phrases: [milimola, milimol] }
+  - { symbol: µmol, phrases: [mikromola, mikromol] }
+  - { symbol: "°C", phrases: [stepeni celzijusa, stepeni celzija, stupnjeva celzijusa, stupnjeva celzija, stepeni, stepena, stupnjeva, stupnja, celzijusa, celzija] }
+  - { symbol: "%", phrases: [posto, procenata, procenat, procenta, odsto, postotaka, postotak], attach: glue }
+  - { symbol: "‰", phrases: [promila, promil], attach: glue }
+  - { symbol: /h, phrases: [na sat, po satu, na sat vremena, u satu], attach: suffix }
+  - { symbol: /min, phrases: [u minuti, na minut, po minuti, u minutu, na minutu, otkucaja u minuti], attach: suffix }
+  - { symbol: /kg, phrases: [po kilogramu, na kilogram, po kilu, na kilogram tjelesne težine, po kilogramu tjelesne težine, po kilogramu telesne težine], attach: suffix }
+  - { symbol: /l, phrases: [po litri, na litar, po litru], attach: suffix }
+  - { symbol: /dl, phrases: [po decilitru, na decilitar], attach: suffix }
+  - { symbol: /ml, phrases: [po mililitru, na mililitar], attach: suffix }

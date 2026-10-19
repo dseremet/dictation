@@ -1,0 +1,65 @@
+{
+  "name": "@ditactic/dictation-vue",
+  "version": "0.1.0",
+  "description": "Vue 3 composables and components for Bosnian/Croatian/Serbian medical dictation: MediaRecorder or native WebView bridge recording, upload, transcription polling and a themable UI.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "test": "vitest run",
+    "prepack": "npm run build"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.0"
+  },
+  "dependencies": {
+    "@ditactic/dictation-protocol": "^0.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/test-utils": "^2.4.6",
+    "jsdom": "^25.0.1",
+    "typescript": "^5.6.0",
+    "vite": "^5.4.11",
+    "vite-plugin-dts": "^4.3.0",
+    "vitest": "^2.1.0",
+    "vue": "^3.5.13"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/diTactic-Media/dictation.git",
+    "directory": "packages/vue"
+  },
+  "keywords": [
+    "vue",
+    "dictation",
+    "speech-to-text",
+    "mediarecorder",
+    "whisper",
+    "bosnian",
+    "croatian",
+    "serbian"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
