@@ -13,6 +13,8 @@ What you get:
 
 Requirements: PHP 8.2+, Laravel 11 or 12, `fileinfo` extension, a queue worker.
 
+Laravel 11 is out of security support and every 11.x release has published advisories, so Composer 2.9+ refuses to resolve a fresh Laravel 11 install by default. The package itself works on 11 (CI runs the full suite on 11.57 with `composer config policy.advisories.block false`), but new projects should use Laravel 12.
+
 ## Install
 
 ```bash

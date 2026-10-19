@@ -42,6 +42,15 @@ jobs:
       - name: Pin Laravel / Testbench versions
         run: composer require "illuminate/support:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
 
+      # Laravel 11 is past its security-support window: every 11.x release
+      # (up to 11.57) carries published advisories that were never backported,
+      # so Composer's default advisory block refuses to install any of them.
+      # We still test against 11 because hosts on 11 use this package; the
+      # opt-out is limited to this CI runner and never shipped in composer.json.
+      - name: Allow advisory-affected Laravel 11 (CI only)
+        if: matrix.laravel == '11.*'
+        run: composer config policy.advisories.block false
+
       - name: Install dependencies
         run: composer update --prefer-dist --no-interaction --no-progress
 
