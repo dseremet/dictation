@@ -1,4 +1,4 @@
-# dictation
+# Speech to text
 
 Open-source speech-to-text for **Bosnian, Croatian and Serbian medical
 dictation** (Latin script, Latin medical terminology). Doctors press a mic on
